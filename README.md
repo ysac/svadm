@@ -7,12 +7,15 @@ It is made with django is a python framework.
 memo
 ====
 
-% cd work/svadm
+% cd ~/work/svadm
 
-o runserver
-
+runserver
 % sudo python manage.py runserver 192.168.10.10:80
 
-o dbsync
-
+db
+% python manage.py sql svinfo
 % python manage.py syncdb
+
+git
+% git commit -a -m 'comment'
+% git push -u origin master
