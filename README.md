@@ -60,6 +60,7 @@ It is made with django is a python framework.
 
 ## Reference
 
+* <http://docs.djangoproject.jp/en/latest/contents.html>
 * <http://codechord.com/2012/01/readme-markdown/>
 
 
