@@ -7,15 +7,22 @@ It is made with django is a python framework.
 memo
 ====
 
-% cd ~/work/svadm
+Django-1.6.2
+
+    % cd ~/work/svadm
 
 runserver
-% sudo python manage.py runserver 192.168.10.10:80
+    % sudo python manage.py runserver 192.168.10.10:80
 
 db
-% python manage.py sql svinfo
-% python manage.py syncdb
+    % python manage.py sql svinfo
+    % python manage.py syncdb
 
 git
-% git commit -a -m 'comment'
-% git push -u origin master
+    % git add .
+    % git commit -a -m 'comment'
+    % git push -u origin master
+    % git push
+
+ref
+* <http://codechord.com/2012/01/readme-markdown/>
