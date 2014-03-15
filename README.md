@@ -15,9 +15,8 @@ workdir
 
 `% cd ~/work/svadm`
 
-* runserver
-
-    % sudo python manage.py runserver 192.168.10.10:80
+runserver
+      % sudo python manage.py runserver 192.168.10.10:80
 
 * db
 
