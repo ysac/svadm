@@ -25,6 +25,11 @@ It is made with django is a python framework.
 % sudo python manage.py runserver 192.168.10.10:80
 ```
 
+## Test access
+
+* http://192.168.10.10/
+* http://192.168.10.10/admin
+
 ## DB
 
 ```
