@@ -4,6 +4,18 @@ This application is used to manage the server.
 It is made with django is a python framework.
 
 
+# TODO
+
+* add role field
+* add IPv4/v6 address field
+* add LB field
+* add comment field
+* add VIP class
+* create view
+* create import batch
+* create export batch
+
+
 # memo
 
 ## Environment
