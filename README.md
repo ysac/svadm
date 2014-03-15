@@ -3,6 +3,7 @@
 This application is used to manage the server.
 It is made with django is a python framework.
 
+
 # memo
 
 ## Environment
@@ -12,26 +13,26 @@ It is made with django is a python framework.
 * python 2.6.6
 * Django1.6.2
 
-## workdir
+## Workdir
 
 ```
 % cd ~/work/svadm
 ```
 
-runserver
+## Testserver
 
 ```
 % sudo python manage.py runserver 192.168.10.10:80
 ```
 
-* db
+## DB
 
 ```
 % python manage.py sql svinfo
 % python manage.py syncdb
 ```
 
-* git
+## Git
 
 ```
 % git add .
@@ -40,6 +41,8 @@ runserver
 % git push
 ```
 
-* ref
+## Reference
 
-<http://codechord.com/2012/01/readme-markdown/>
+* <http://codechord.com/2012/01/readme-markdown/>
+
+
