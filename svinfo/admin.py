@@ -5,6 +5,7 @@ class ServiceAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['service_id', 'service_name']}),
     ]
+    list_display = ('service_id', 'service_name')
 
 class OsAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -13,13 +14,15 @@ class OsAdmin(admin.ModelAdmin):
 
 class StatusAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['status']}),
+        (None, {'fields': ['status_name']}),
     ]
 
 class ServerAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['hostname', 'status', 'os', 'service']}),
     ]
+    list_display = ('hostname', 'status', 'os', 'service')
+    list_filter = ['status', 'os', 'service']
 
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Os, OsAdmin)
