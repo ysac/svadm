@@ -7,13 +7,13 @@ It is made with django is a python framework.
 memo
 ====
 
-* used version
+used version
 
-Django-1.6.2
+* Django-1.6.2
 
-* workdir
+workdir
 
-    % cd ~/work/svadm
+`% cd ~/work/svadm`
 
 * runserver
 
