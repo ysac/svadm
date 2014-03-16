@@ -33,6 +33,7 @@ class ServerAdmin(admin.ModelAdmin):
     ]
     list_display = ('hostname', 'service', 'role', 'status', 'os', 'ip4', 'lb', 'opennms_id', 'opennms_host', 'opennms_mac', 'comment')
     list_filter = ['service', 'status', 'os', 'lb']
+    search_fields = ['hostname']
 
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Role, RoleAdmin)

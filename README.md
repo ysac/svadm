@@ -14,6 +14,7 @@ It is made with django is a python framework.
 * create view
 * create import batch
 * create export batch
+* directory setting in templates/*
 
 
 # memo
