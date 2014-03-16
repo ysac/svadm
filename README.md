@@ -6,10 +6,10 @@ It is made with django is a python framework.
 
 # TODO
 
-* add role field
-* add IPv4/v6 address field
-* add LB field
-* add comment field
+* [x] add role field
+* [x] add IPv4/v6 address field
+* [x] add LB field
+* [x] add comment field
 * add VIP class
 * create view
 * create import batch

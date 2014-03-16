@@ -7,11 +7,11 @@ class Service(models.Model):
     def __unicode__(self):
         return self.service_id
 
-class Os(models.Model):
-    os_name   = models.CharField(max_length=256,unique=True)
+class Role(models.Model):
+    role_name = models.CharField(max_length=256,unique=True)
 
     def __unicode__(self):
-        return self.os_name
+        return self.role_name
 
 class Status(models.Model):
     status_name   = models.CharField(max_length=256,unique=True)
@@ -19,28 +19,31 @@ class Status(models.Model):
     def __unicode__(self):
         return self.status_name
 
+class OS(models.Model):
+    os_name   = models.CharField(max_length=256,unique=True)
+
+    def __unicode__(self):
+        return self.os_name
+
+class LB(models.Model):
+    lb_name = models.CharField(max_length=256,unique=True)
+
+    def __unicode__(self):
+        return self.lb_name
+
 class Server(models.Model):
-    hostname      = models.CharField(u'hostname',max_length=256,unique=True)
-    status        = models.ForeignKey(Status)
-    os            = models.ForeignKey(Os)
+    hostname      = models.CharField(max_length=256,unique=True)
     service       = models.ForeignKey(Service)
-#    service_id    = models.CharField(max_length=20)
-#    service_name  = models.CharField(max_length=20)
-#    ip4_addr      = models.CharField(max_length=20)
-#    ip6_addr      = models.CharField(max_length=20)
-#    load_balancer = models.CharField(max_length=20)
-#    machine_group = models.CharField(max_length=20)
-#    opennms_host  = models.CharField(max_length=20)
-#    opennms_id    = models.CharField(max_length=20)
+    role          = models.ForeignKey(Role)
+    status        = models.ForeignKey(Status)
+    os            = models.ForeignKey(OS)
+    ip4           = models.IPAddressField(unique=True)
+    ip6           = models.CharField(max_length=256,unique=True,blank=True)
+    lb            = models.ForeignKey(LB)
+    opennms_id    = models.CharField(max_length=256,blank=True)
+    opennms_host  = models.CharField(max_length=256,blank=True)
+    opennms_mac   = models.CharField(max_length=256,unique=True,blank=True)
+    comment       = models.CharField(max_length=256,blank=True)
 
     def __unicode__(self):
         return self.hostname
-
-#
-#Class Opennms(models.Model):
-#    id   = models.CharField(max_length=20)
-#    host = models.CharField(max_length=20)
-#
-#    del __unicode__(self):
-#        return self.id
-#

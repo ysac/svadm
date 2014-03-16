@@ -1,5 +1,5 @@
 from django.contrib import admin
-from svinfo.models import Service, Os, Status, Server
+from svinfo.models import Service, Role, Status, OS, LB, Server
 
 class ServiceAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -7,9 +7,9 @@ class ServiceAdmin(admin.ModelAdmin):
     ]
     list_display = ('service_id', 'service_name')
 
-class OsAdmin(admin.ModelAdmin):
+class RoleAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['os_name']}),
+        (None, {'fields': ['role_name']}),
     ]
 
 class StatusAdmin(admin.ModelAdmin):
@@ -17,14 +17,26 @@ class StatusAdmin(admin.ModelAdmin):
         (None, {'fields': ['status_name']}),
     ]
 
+class OSAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['os_name']}),
+    ]
+
+class LBAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['lb_name']}),
+    ]
+
 class ServerAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['hostname', 'status', 'os', 'service']}),
+        (None, {'fields': ['hostname', 'service', 'role', 'status', 'os', 'ip4', 'ip6', 'lb', 'opennms_id', 'opennms_host', 'opennms_mac', 'comment']}),
     ]
-    list_display = ('hostname', 'status', 'os', 'service')
-    list_filter = ['status', 'os', 'service']
+    list_display = ('hostname', 'service', 'role', 'status', 'os', 'ip4', 'lb', 'opennms_id', 'opennms_host', 'opennms_mac', 'comment')
+    list_filter = ['service', 'status', 'os', 'lb']
 
 admin.site.register(Service, ServiceAdmin)
-admin.site.register(Os, OsAdmin)
+admin.site.register(Role, RoleAdmin)
 admin.site.register(Status, StatusAdmin)
+admin.site.register(OS, OSAdmin)
+admin.site.register(LB, LBAdmin)
 admin.site.register(Server, ServerAdmin)
