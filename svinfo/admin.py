@@ -29,10 +29,11 @@ class LBAdmin(admin.ModelAdmin):
 
 class ServerAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['hostname', 'service', 'role', 'status', 'os', 'ip4', 'ip6', 'lb', 'opennms_id', 'opennms_host', 'opennms_mac', 'comment']}),
+        ('Basic Information', {'fields': ['hostname', 'service', 'role', 'status', 'os', 'ip4', 'ip6', 'lb', 'comment']}),
+        ('OpenNMS', {'fields': ['opennms_id', 'opennms_host', 'opennms_mac'], 'classes': ['collapse']}),
     ]
-    list_display = ('hostname', 'service', 'role', 'status', 'os', 'ip4', 'lb', 'opennms_id', 'opennms_host', 'opennms_mac', 'comment')
-    list_filter = ['service', 'status', 'os', 'lb']
+    list_display = ('hostname', 'service', 'role', 'status', 'os', 'ip4', 'lb', 'comment')
+    list_filter = ['service', 'status', 'os']
     search_fields = ['hostname']
 
 admin.site.register(Service, ServiceAdmin)
