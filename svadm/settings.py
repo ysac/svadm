@@ -83,5 +83,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (
-    '/home/vagrant/work/svadm/templates/'
+    '/home/vagrant/work/svadm/templates/',
 )
