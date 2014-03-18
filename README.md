@@ -50,6 +50,16 @@ It is made with django is a python framework.
 % python manage.py syncdb
 ```
 
+* db export / inport
+```
+% python manage.py dumpdata svinfo > dump.json
+% python manage.py flush
+% python manage.py syncdb
+% python manage.py createsuperuser
+% python manage.py loaddata dump.json
+
+```
+
 ## Git
 
 ```
