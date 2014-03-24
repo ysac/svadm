@@ -38,11 +38,11 @@ class Server(models.Model):
     status        = models.ForeignKey(Status)
     os            = models.ForeignKey(OS)
     ip4           = models.IPAddressField(unique=True)
-    ip6           = models.CharField(max_length=256,unique=True,blank=True)
+    ip6           = models.CharField(max_length=256,blank=True)
     lb            = models.ForeignKey(LB)
     opennms_id    = models.CharField(max_length=256,blank=True)
     opennms_host  = models.CharField(max_length=256,blank=True)
-    opennms_mac   = models.CharField(max_length=256,unique=True,blank=True)
+    opennms_mac   = models.CharField(max_length=256,blank=True)
     comment       = models.CharField(max_length=256,blank=True)
 
     def __unicode__(self):
